@@ -1,6 +1,10 @@
 # Built application files
 *.apk
+<<<<<<< HEAD
 *.ap_ 
+=======
+*.ap_
+>>>>>>> 70bbf86cd173f5d656f35614bc71925bab35dd8f
 
 # Java class files  
 *.class
