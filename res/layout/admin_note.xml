@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:padding="10dp"
+    android:orientation="vertical"
+    >
+    
+    <ImageView 
+        android:id="@+id/img_ok"
+        android:src="@drawable/ic_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/icon"        
+        />
+    <TextView
+	    android:id="@+id/btn_OK"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/btn_ok" 
+	    android:paddingTop="10dp"
+	    android:paddingRight="5dp"
+	    android:layout_toRightOf="@id/img_ok"
+	    />
+      
+    <EditText 
+        android:id="@+id/note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="@string/dialog_edit_title"
+        android:layout_toRightOf="@id/btn_OK"
+        />
+    
+    <RadioGroup
+        android:id="@+id/radio_type" 
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_ok"
+        >
+     <RadioButton
+            android:id="@+id/radio_type_text" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type_txt"
+            android:checked="true"
+            />
+     
+        <RadioButton 
+            android:id="@+id/radio_type_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type_voice"            
+            />
+     </RadioGroup>
+    
+    <EditText 
+        android:id="@+id/note_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:lines="9"
+        android:hint="@string/dialog_edit_content"  
+        android:gravity="top" 
+        android:layout_below="@id/radio_type" 
+        />
+    
+    <Spinner
+        android:id="@+id/spinner_op"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/list_categories"
+        android:padding="@dimen/spinner_padding"
+        android:soundEffectsEnabled="true"
+        android:layout_alignParentBottom="true"
+        />
+	
+    <TextView
+	    android:id="@+id/voice_status"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_horizontal" 
+	    android:paddingTop="50dp"
+	    android:textSize="@dimen/txt_general"
+	    android:layout_below="@id/note_title"
+	    android:text="@string/type_voice"
+	    />
+   
+    <RelativeLayout 
+        android:id="@+id/btns_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/voice_status"
+        android:padding="@dimen/Rec_btns_padding"
+        
+        >
+        
+    <Button
+        android:id="@+id/btn_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_action_mic"
+        android:layout_centerInParent="true"
+        />
+    <Button
+        android:id="@+id/btn_stop_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_action_save"
+        android:layout_centerInParent="true"
+        android:enabled="false"
+        android:visibility="invisible"        
+        />
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_rec"        
+        >
+
+	<Button
+	    android:id="@+id/btn_play"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/ic_action_play_over_video" />
+	
+    <Button
+        android:id="@+id/btn_erase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_action_discard"
+        android:layout_alignParentRight="true"
+        />
+    </RelativeLayout>
+    </RelativeLayout>
+    
+    <fragment 
+	    android:id="@+id/map"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:name="com.google.android.gms.maps.MapFragment"
+		class="com.google.android.gms.maps.SupportMapFragment"
+		android:layout_below="@id/btns_rec"
+		/>
+    
+</RelativeLayout>
